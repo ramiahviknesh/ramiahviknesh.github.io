@@ -1,339 +1,129 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Ticketing system - Landing page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="favourite icon" type="image/png" href="./img/favicon.png"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="https://use.typekit.net/yhq0raj.css" />
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-  crossorigin="anonymous"></script>
-  <script src="main.js"></script>
-  </head>
+<head>
+<title>Ramiah Viknseh Technology cards</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-  <body>
-    <section class="topbar">
-      <div class="container">
-                <div class="topbar__wrap">
-                        <div class="topbar__logo">
-                            <a href="https://www.happyfox.com/" class="brand-logo">
-                                <img src="img/happyfox-logo.svg" alt="Happyfox logo">
-                            </a>
-                        </div> 
-                        <div class="topbar__loginwrap">
-                            <a href="tel:9495352220" class="topbar-link">(949) 535-2220</a>
-                        </div>
-                 </div>
-          </div>
+<style type="text/css">
+*{
+  marign: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.card_wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.card {
+  margin: 50px 0px;
+  width: 180px;
+  height: 250px;
+  background-color: #252938;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transform: perspective(400px) rotateY(-18deg);
+}
+.card_logo {
+  margin: 0px auto;
+}
+.line_mock {
+  margin: 10px auto;
+  height: 5px;
+  width: 75%;
+  background-color: #3d4254;
+  border-radius: 5px;
+  position:relative;
+  overflow: hidden;
+}
+.line_mock:after {
+  content:'';
+  top:0;
+  width:100%;
+  height:5px;
+  position: absolute;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%);
+}
+.line_mock.second {
+  width: 95%;
+}
+.card.left{
+  transform: perspective(400px) rotateY(-18deg);
+}
+.card.left .play_icon {
+  color: #b5453d;
+}
+.card.center {
+  transform: scale(1.2);
+  position: relative;
+  z-index: 20;
+}
+.card.center .play_icon {
+  color: #82d9f8;
+}
+.card.right {
+  transform: perspective(400px) rotateY(18deg);
+}
+.card.right .play_icon {
+  color: #76b283;
+}
+@keyframes slide {
+  0% {transform:translateX(-45%);}
+  100% {transform:translateX(100%);}
+}
+@keyframes slide2 {
+  0% {transform:translateX(-60%);}
+  100% {transform:translateX(100%);}
+}
+@keyframes slide3 {
+  0% {transform:translateX(-90%);}
+  100% {transform:translateX(100%);}
+}
+.line_mock.first:after {
+  animation: slide 1.2s infinite;
+}
+.line_mock.second:after {
+  animation: slide2 1.2s infinite;
+}
+.line_mock.third:after {
+  animation: slide3 1.2s infinite;
+}
+</style>
+</head>
+<body>
+  <div class="card_wrap">
+    <div class="card left">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png" width="60%" class="card_logo" />
+        <div class="line_wrap">
+          <div class="line_mock first"></div>
+          <div class="line_mock second"></div>
+          <div class="line_mock third"></div>
+        </div>
+        <i class="fas fa-play-circle fa-2x play_icon"></i>
       </div>
-    </section>
-
-    <section class="banner">
-            <div class="container">
-               <div class="banner__wrap">
-                  <div class="banner__text-section">
-                     <h1 class="banner__heading">Ticketing System Reimagined.</h1>
-                     <div class="banner__testimonial-box">
-                        <p class="banner__testimonial-txt">
-                                Meet HappyFox, a practical help desk and customer support software solution that can help you reduce chaos and bring 
-                                order to your support process with a robust support ticket system, self-service knowledge base, and community forums.
-                        </p>
-                        <a class="banner__video-txt" href="www.happyfox.com">
-                        <img src="./img/play.svg" alt="play">
-                          <span> Watch video</span> 
-                        </a>
-                     </div>
-                  </div>
-                  <div class="banner__form-section">
-                     <div class="banner__form-section-wrap">
-                        <form>
-                           <p class="demo-heading">Schedule a Demo now!</p>
-                           <div class="form-group"><label for="name"><input type="text" id="name" class="input" name="name" required="" value=""><span class="label-secondary">Your Name</span></label></div>
-                           <div class="form-group"><label for="phoneno"><input type="tel" id="phoneno" class="input" name="phoneno" required="" value=""><span class="label-secondary">Phone Number</span></label></div>
-                           <div class="form-group"><label for="workemail"><input type="email" id="workemail" class="input" name="workemail" required="" value=""><span class="label-secondary">Work Email</span></label></div>
-                           <div class="form-group">
-                              <select id="visitor_region" class="visit-region" required="">
-                                 <option selected="" value="-1" disabled="">Your Region</option>
-                                 <option value="1">Americas</option>
-                                 <option value="2">Europe, Middle East &amp; Africa</option>
-                                 <option value="3">Asia Pacific</option>
-                              </select>
-                           </div>
-                           <div class="form-group"><button type="submit" class="button button-demo">Book a Demo Now</button></div>
-                        </form>
-                        <p class="privacy-note">By clicking the 'BOOK A DEMO NOW' button you agree to our Privacy Policy.</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-        </section>
-
-        <section class="brandlogos">
-                <div class="container">
-                  <h6 class="para-2 text-center brandlogos__heading">Trusted by Fortune 500 Brands</h6>
-                  <ul class="brandlogos__list">
-                    <li><img src="img/jabra-logo.svg" alt="Jabra" /></li>
-                    <li><img src="img/leapfrog-logo.svg" alt="Leap Frog" /></li>
-                    <li><img src="img/harbour-logo.svg" alt="Harbour" /></li>
-                    <li><img src="img/lowes-logo.svg" alt="Lowes" /></li>
-                    <li><img src="img/whirlpool-logo.svg" alt="Whirlpool" /></li>
-                  </ul>
-                </div>
-        </section>
-
-        <section class="alt-tabs">
-            <div class="container">
-            <h3 class="alt-tabs-heading">
-                    Stop Being Busy and Start Being Productive
-            </h3>
-            <p class="alt-tabs-description">
-                    Deliver knock-your-socks-off customer service with HappyFox ticketing system.
-            </p>
-            </div>
-            <div class="tab right">
-                <div class="container">
-                    <div class="tab-wrapper">
-
-                        <div class="tabtext-wrapper">
-                            <div class="tab-text right active" data-tab="tab-1">
-                                <p class="tab-head">Tickets Queue</p>
-                                <p class="tab-description">
-                                    An agent’s priority varies with responsibilities. 
-                                    Create a custom ticket queue by adding one or more rules to filter tickets.
-                                </p>
-                            </div>
-                            <img src="https://www.datocms-assets.com/7908/1549518440-card-view-3x.png" alt="" class="tab-pic right active mobile" >
-                            <div class="tab-text right" data-tab="tab-2">
-                                    <p class="tab-head">Status</p>
-                                    <p class="tab-description">
-                                            Slice and dice tickets into more manageable chunks 
-                                            based on the status of your assigned tickets.
-                                    </p>
-                            </div>
-                            <img src="https://www.datocms-assets.com/7908/1549518440-card-view-3x.png" alt="" class="tab-pic right mobile" >
-                            <div class="tab-text right" data-tab="tab-3">
-                                    <p class="tab-head">Categories</p>
-                                    <p class="tab-description">
-                                            All incoming tickets are automatically sorted into categories like support, 
-                                            sales, marketing and billing.
-                                    </p>
-                            </div>
-                            <img src="https://www.datocms-assets.com/7908/1549518440-card-view-3x.png" alt="" class="tab-pic right mobile" >
-                        </div>
-
-                        <div class="tabpic-wrapper">
-                            <div class="tab-ticket__infodetail ">
-                                <img src="https://www.datocms-assets.com/7908/1549518440-card-view-3x.png" alt="" class="tab-pic right active" id="tab-1">
-                            </div>
-                            <div class="tab-ticket__infodetail">
-                                    <img src="https://www.datocms-assets.com/7908/1549518440-card-view-3x.png" alt="" class="tab-pic right " id="tab-2">
-                            </div>
-                            <div class="tab-ticket__infodetail">
-                                    <img src="https://www.datocms-assets.com/7908/1549518440-card-view-3x.png" alt="" class="tab-pic right" id="tab-3">
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="tab left">
-                    <div class="container">
-                        <div class="tab-wrapper">
-                                <div class="tabpic-wrapper">
-                                        <div class="tab-ticket__infodetail">
-                                                <img src="https://www.datocms-assets.com/7908/1549518440-card-view-3x.png" alt="" class="tab-pic left active" id="tab-4">
-                                        </div>
-                                        <div class="tab-ticket__infodetail">
-                                                <img src="https://www.datocms-assets.com/7908/1549518440-card-view-3x.png" alt="" class="tab-pic left" id="tab-5">
-                                        </div>
-                                        <div class="tab-ticket__infodetail">
-                                                <img src="https://www.datocms-assets.com/7908/1549518440-card-view-3x.png" alt="" class="tab-pic left" id="tab-6">
-                                        </div>
-                                    </div>
-                            
-                            <div class="tabtext-wrapper">
-                                <div class="tab-text left active" data-tab="tab-4">
-                                    <p class="tab-head">Pinned Tickets</p>
-                                    <p class="tab-description">
-                                            Pinned tickets are like your daily to-do-lists. 
-                                            They help you set priorities and organise your time better.
-                                    </p>
-                                </div>
-                                <img src="https://www.datocms-assets.com/7908/1549518440-card-view-3x.png" alt="" class="tab-pic left active mobile" id="tab-4">
-                                <div class="tab-text left" data-tab="tab-5">
-                                        <p class="tab-head">Multi-Channel Ticketing</p>
-                                        <p class="tab-description">
-                                                Manage customer conversations from multiple channels like email, 
-                                                social, chat and phone calls in a single ticketing system.
-                                        </p>
-                                </div>
-                                <img src="https://www.datocms-assets.com/7908/1549518440-card-view-3x.png" alt="" class="tab-pic left  mobile" id="tab-5">
-                                <div class="tab-text left" data-tab="tab-6">
-                                        <p class="tab-head">Integrations</p>
-                                        <p class="tab-description">
-                                                Customer data is all over the place. 
-                                                Seamlessly integrate HappyFox with all your apps and make data driven decisions.
-                                        </p>
-                                </div>
-                                <img src="https://www.datocms-assets.com/7908/1549518440-card-view-3x.png" alt="" class="tab-pic left mobile" id="tab-6">
-                            </div>
-    
-                        </div>
-                    </div>
-                </div>
-    </section>
-
-    <section class="testimonial-carousel">
-        <div class="container">
-            <div class="testimonial-wrapper">
-            <ul class="rslides">
-                    <li>
-                        <div class="testimonial-inner">
-                                <p class="testimonial-dialog">
-                                        “There is nothing I do not use in HappyFox and our team likes the app, the reports, the smart rules, and the tags. 
-                                        My customers have all responded very positively to the change; they love that they can see all the tickets for their 
-                                        site and comment on whether they're still needed.”
-                                </p>
-                                <div class="testimonial-infowrap">
-                                    <img src="./img/hb-testim-logo.jpg" alt="haarbour sea plane logo">
-                                    <div class="testimonial-info">
-                                        <p class="testimonial-author">
-                                            Johnny Mendoza
-                                        </p>
-                                        <p class="testimonial-role">
-                                            Director, Harbour Air Seaplanes
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                    </li>
-                    <li>
-                            <div class="testimonial-inner">
-                                    <p class="testimonial-dialog">
-                                            “There is nothing I do not use in HappyFox and our team likes the app, the reports, the smart rules, and the tags. 
-                                            My customers have all responded very positively to the change; they love that they can see all the tickets for their 
-                                            esponded very positively to the change; they love that they can see al
-                                            esponded very positively to the change; they love that they can see al
-                                            esponded very positively to the change; they love that they can see al
-                                            site and comment on whether they're still needed.”
-                                    </p>
-                                    <div class="testimonial-infowrap">
-                                        <img src="./img/hb-testim-logo.jpg" alt="haarbour sea plane logo">
-                                        <div class="testimonial-info">
-                                            <p class="testimonial-author">
-                                                Johnny Mendoza
-                                            </p>
-                                            <p class="testimonial-role">
-                                                Director, Harbour Air Seaplanes
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                    </li>
-                    <li>
-                            <div class="testimonial-inner">
-                                    <p class="testimonial-dialog">
-                                            “There is nothing I do not use in HappyFox and our team likes the app, the reports, the smart rules, and the tags. 
-                                            My customers have all responded very positively to the change; they love that they can see all the tickets for their 
-                                            site and comment on whether they're still needed.”
-                                    </p>
-                                    <div class="testimonial-infowrap">
-                                        <img src="./img/hb-testim-logo.jpg" alt="haarbour sea plane logo">
-                                        <div class="testimonial-info">
-                                            <p class="testimonial-author">
-                                                Johnny Mendoza
-                                            </p>
-                                            <p class="testimonial-role">
-                                                Director, Harbour Air Seaplanes
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                        </li>
-            </ul>    
-        </div>
-        </div>
-    </section>
-
-    <section class="cta red">
-        <div class="container">
-            <div class="cta__wrap">
-                <img src="./img/pcmag.svg" alt="pc magazine award" class="cta-award"/>
-                <h4 class="cta-heading">
-                    Best Help Desk Software for 4 years in a row
-                </h4>
-                <p class="cta-description">
-                    Get a one-on-one demo, tailored to your business needs.
-                </p>
-                <div class="btn-container">
-                    <a href="" class="btn white">book a demo now</a>
-                    <a href="tel:9495352220" class="btn outlined">CALL (949) 535-2220</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer__wrap">
-                <p class="footer__text">
-                    HappyFox - The best online web based help desk software and knowledge base software solution.
-                </p>
-                <p class="footer__text">
-                    Copyright © 2019, HappyFox Inc. All Rights Reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
-  </body>
+    <div class="card center">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2000px-React-icon.svg.png" width="80%" class="card_logo" />
+      <div class="line_wrap">
+        <div class="line_mock first"></div>
+        <div class="line_mock second"></div>
+        <div class="line_mock third"></div>
+      </div>
+      <i class="fas fa-play-circle fa-2x play_icon"></i>
+    </div>
+      <div class="card right">
+      <img src="https://vuejs.org/images/logo.png" width="50%" class="card_logo" />
+      <div class="line_wrap">
+        <div class="line_mock first"></div>
+        <div class="line_mock second"></div>
+        <div class="line_mock third"></div>
+      </div>
+      <i class="fas fa-play-circle fa-2x play_icon"></i>
+    </div>
+  </div>
+</body>
 </html>
-
-<script>
-$(document).ready(function(){
-
-	// tabs
-	$('.tab-text.right').click(function(){
-		var tab_id = $(this).attr('data-tab');
-
-		$('.tab-text.right').removeClass('active');
-        $('.tab-pic.right').removeClass('active');
-        
-
-		$(this).addClass('active');
-		$("#"+tab_id).addClass('active');
-    })
-    
-    $('.tab-text.left').click(function(){
-		var tab_id = $(this).attr('data-tab');
-
-		$('.tab-text.left').removeClass('active');
-        $('.tab-pic.left').removeClass('active');
-        
-
-		$(this).addClass('active');
-		$("#"+tab_id).addClass('active');
-    })
-
-    // slider 
-    $(function() {
-          $(".rslides").responsiveSlides();
-        });
-
-        $(".rslides").responsiveSlides({
-        auto: true,            
-        speed: 500,          
-        timeout: 6000,         
-        nav: true,           
-        pause: true,          
-        pauseControls: true,
-    });
-
-})
-</script>
-
-
-
